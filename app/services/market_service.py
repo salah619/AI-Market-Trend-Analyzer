@@ -36,10 +36,9 @@ class MarketService:
             ConnectionError: If network issues or API restrictions prevent data retrieval.
         """
         try:
-            # Eng. Salah's Fix: Custom headers to mimic browser requests and bypass Yahoo Finance 401 errors
+            # Utilizes yfinance for robust data retrieval. While yfinance handles many network complexities,
+            # challenges in environments like Termux (e.g., 401 errors) are noted.
             ticker = yf.Ticker(symbol)
-            # yfinance internally handles some headers, but for complex environments like Termux, 
-            # we ensure the session is robust.
             df = ticker.history(period=period, interval=interval)
             
             if df.empty:
