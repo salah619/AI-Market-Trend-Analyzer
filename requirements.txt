@@ -10,3 +10,12 @@ python-dotenv
 sqlalchemy
 jinja2
 python-multipart
+
+# Vector Database for Historical Insights Memory
+chromadb==0.4.24
+numpy
+
+# Testing Framework
+pytest==7.4.3
+pytest-asyncio==0.21.1
+httpx==0.25.1
